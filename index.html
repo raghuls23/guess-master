@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Master</title>
+    <link rel="icon" href="Colorful Modern Gaming Logo (2)-Photoroom.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img src="Colorful Modern Gaming Logo (2)-Photoroom.png" alt="gift" id="gif">
+    <h1>Guess<span> Master</span></h1>
+    <h2>Guess the Magic Number</h2>
+    <div class="box">
+        <div class="input-group">
+            <input type="number" min="1" id="guessno" placeholder="Enter your guess between 1 to 100">
+            <button id="cmg" onclick="check()">Check My Guess</button>
+            <button id="play" onclick="refresh()"><p id="ref">↻</p></button>
+        </div>
+        <div id="diff">
+            <h3 id="head">Choose the Difficulty:</h3>
+            <input type="radio" id="easy" name="difficulty" checked>
+            <label for="easy">Easy</label>
+            <input type="radio" id="hard" name="difficulty">
+            <label for="hard">Hard</label>
+        </div>
+        <div id="inst">
+            <div id="notifywin"></div>
+            <p id="result">You have 10 chances left</p>
+        </div>
+    </div>
+    <canvas id="confetti"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

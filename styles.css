@@ -1,0 +1,185 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #F0F8FF;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0 10px;
+    text-align: center;
+    color: #349ecd;
+}
+
+span {
+    color: #0f62b6;
+}
+
+h2 {
+    margin-top: 10px;
+    font-weight: 100;
+    font-size: 1.25em;
+}
+
+#gif {
+    height: 150px;
+    width: auto;
+    margin: 20px 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 650px;
+    background-color: #9fd6fa;
+    border-radius: 15px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+input, button {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input {
+    background-color: #fff;
+    width: calc(100% - 240px);
+    max-width: 500px;
+    height: 50px;
+    margin: 10px 0;
+    border: 2px solid #000;
+}
+
+#cmg {
+    margin-left: 10px;
+}
+
+button {
+    background-color: #2991b7;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin: 10px 0;
+    width: 200px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+}
+
+#inst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    color: #000;
+    width: 100%;
+}
+
+#result {
+    margin-top: -5px;
+    background-color: #34adeaca;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 5px;
+    color: #fff;
+    width: 50%;
+}
+
+#notifywin {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#play {
+    border-radius: 80%;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+#ref {
+    display: block;
+    font-size: 25px;
+    height: 10px;
+    margin-top: 5px;
+    margin-left: 13px;
+    transform: rotate(150deg);
+    font-weight: bolder;
+    color: #F0F8FF;
+}
+
+#diff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    color: #000;
+}
+
+#head {
+    margin-right: 10px;
+}
+
+#easy, #hard {
+    margin: 0 15px;
+    width: 20px;
+    height: 20px;
+}
+
+#confetti {
+    height: 0;
+    width: 0;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    input, button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #inst {
+        padding: 10px;
+    }
+
+    #diff {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #head {
+        margin-bottom: 10px;
+    }
+}
