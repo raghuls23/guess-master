@@ -72,6 +72,7 @@ function check() {
         jsConfetti.addConfetti({emojis: ['😭','😥','😥','😔','😔','😭']});
         result.style.paddingBottom = "0px";
         play.style.display = "block";
+        cmg.style.cursor = "not-allowed";
         // cmg.style.display = "none";
         adjustInstSize();
         disableButton("cmg");
@@ -103,6 +104,7 @@ function check() {
             inst.style.color = "#ffffff";
             result.style.color = "#ffffff";
             result.style.backgroundColor = "#ea431f";
+            cmg.style.cursor = "not-allowed";
             jsConfetti.addConfetti({emojis: ['😭','😥','😥','😔','😔','😭']});
             result.style.paddingBottom = "0px";
             // cmg.style.display = "none";
@@ -123,8 +125,8 @@ function check() {
     }
 }
 
-function adjustInstSize() {
-    inst.style.width = '400px';
-    var width = inst.scrollWidth;
-    inst.style.width = width + 'px';
-}
+// function adjustInstSize() {
+//     inst.style.width = '400px';
+//     var width = inst.scrollWidth;
+//     inst.style.width = width + 'px';
+// }
