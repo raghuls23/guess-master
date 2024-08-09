@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess Master</title>
-    <link rel="icon" href="Colorful Modern Gaming Logo (3)-Photoroom.png">
+    <link rel="icon" href="fave.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <img src="Colorful Modern Gaming Logo (3).png" alt="gift" id="gif">
+    <!-- <img src="fave1.png" alt="Logo" id="gif"> -->
     <h1>Guess<span> Master</span></h1>
     <h2>Guess the Magic Number</h2>
     <div class="box">
+
+        <div id="diff">
+            <label id="head">Challenge Level:</label>
+            <select id="dropdown" onchange="setDifficulty()">
+                <option value="10">Easy</option>
+                <option value="5">Hard</option>
+            </select>
+        </div>
         <div class="input-group">
             <input type="number" min="1" id="guessno" placeholder="Enter your guess between 1 to 100">
             <button id="cmg" onclick="check()">Check My Guess</button>
             <button id="play" onclick="refresh()"><p id="ref">↻</p></button>
         </div>
-        <div id="diff">
-            <h3 id="head">Choose Challenge Level:</h3>
-            <input type="radio" id="easy" name="difficulty" checked>
-            <label for="easy">Easy</label>
-            <input type="radio" id="hard" name="difficulty">
-            <label for="hard">Hard</label>
-        </div>
+    
         <div id="inst">
             <div id="notifywin"></div>
             <p id="result">You have 10 chances left</p>

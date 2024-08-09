@@ -3,17 +3,19 @@ body {
     background-color: #F0F8FF;
     color: #000;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
     height: 100vh;
     margin: 0;
     flex-direction: column;
     padding: 20px;
+    padding-top: 0px;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin: 0 10px;
     text-align: center;
     color: #349ecd;
@@ -24,26 +26,29 @@ span {
 }
 
 h2 {
-    margin-top: 10px;
     font-weight: 100;
     font-size: 1.25em;
 }
 
 #gif {
-    height: 150px;
+    display: flex;
+    margin-top: 30px;
+    height: 130px;
     width: auto;
-    /* margin: 20px 0; */
-}
+    margin: 0px;
+} 
 
 .box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    width: 70%;
     max-width: 650px;
+    min-height: 200px;
     background-color: #9fd6fa;
     border-radius: 15px;
     padding: 40px;
+    padding-top: 10px;
     box-sizing: border-box;
 }
 
@@ -65,7 +70,7 @@ input, button {
 
 input {
     background-color: #fff;
-    width: calc(100% - 240px);
+    width: calc(90% - 240px);
     max-width: 500px;
     height: 50px;
     margin: 10px 0;
@@ -123,10 +128,10 @@ button {
 
 #ref {
     display: block;
-    font-size: 25px;
-    height: 10px;
+    font-size: 24px;
+    height: 9px;
     margin-top: 5px;
-    margin-left: 13px;
+    margin-left: 12.5px;
     transform: rotate(150deg);
     font-weight: bolder;
     color: #F0F8FF;
@@ -134,9 +139,10 @@ button {
 
 #diff {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:flex-end;
     padding: 10px;
+    padding-top: 0px;
     width: 100%;
     color: #000;
 }
@@ -145,10 +151,33 @@ button {
     margin-right: 10px;
 }
 
-#easy, #hard {
-    margin: 0 15px;
-    width: 20px;
-    height: 20px;
+/* Custom styles for the select dropdown */
+#dropdown {
+    appearance: none;
+    background-color: green;
+    color: #fff;
+    width: 75px;
+    padding: 4px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+}
+
+#dropdown:focus {
+    outline: none;
+    /* box-shadow: 0 0 0 3px rgba(121, 175, 198, 0.5); */
+}
+#head{
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#dropdown option {
+    background-color: #fff;
+    color: #000;
 }
 
 #confetti {
@@ -180,6 +209,67 @@ button {
     }
 
     #head {
+        margin-bottom: 10px;
+    }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .box {
+        padding: 30px;
+    }
+
+    input, button {
+        width: 80%;
+    }
+
+    #result, #notifywin {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    input, button {
+        width: 100%;
+        margin: 5px 0;
+        height: auto;
+    }
+
+    #inst {
+        padding: 10px;
+    }
+
+    #result, #notifywin {
+        width: 100%;
+    }
+
+    #diff {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    #head {
+        margin-bottom: 10px;
+    }
+
+    #dropdown {
+        width: 100%;
+        text-align: left;
         margin-bottom: 10px;
     }
 }

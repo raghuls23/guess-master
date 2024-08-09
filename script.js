@@ -6,32 +6,12 @@ var magicNumber = Math.floor(Math.random() * 100) + 1;
 var ref = document.getElementById("play");
 var gameover = false;
 console.log(magicNumber);
-var easyBtn = document.getElementById("easy");
-var hardBtn = document.getElementById("hard");
-var result = document.getElementById("result");
-var attempt = 10;
+var attempt = 10;  // Default attempt
 const canvas = document.querySelector('#confetti');
+document.getElementById("dropdown").selectedIndex = 0;
 const jsConfetti = new JSConfetti();
 
-easyBtn.addEventListener("click", function() {
-    attempt = 10;
-    result.textContent = `You have ${attempt} chances left`;
-    result.style.color = "#ffffff";
-    result.style.width = "50%";
-    result.style.borderRadius = "10px";
-    // alert('Easy Mode Activated');
-    return;
-});
-
-hardBtn.addEventListener("click", function() {
-    attempt = 5;
-    result.textContent = `You have ${attempt} chances left`;
-    result.style.color = "#ffffff";
-    result.style.width = "50%";
-    result.style.borderRadius = "10px";
-    // alert('Hard Mode Activated');
-    return;
-});
+// play.style.display = "none";
 
 function refresh(){
     if(ref){
@@ -44,7 +24,28 @@ function disableButton(cmg) {
     button.disabled = true;
 }
 
-play.style.display = "none";
+function setDifficulty() {
+    var dropdown = document.getElementById('dropdown');
+    var selectedValue = dropdown.value;
+
+    if (selectedValue == "10") {
+        attempt = 10;
+        result.textContent = `You have ${attempt} chances left`;
+        dropdown.style.backgroundColor = 'green';
+    } else if (selectedValue == "5") {
+        attempt = 5;
+        result.textContent = `You have ${attempt} chances left`;
+        dropdown.style.backgroundColor = 'red';
+    }
+
+    if (!dropdown.disabled) {
+        result.textContent = `You have ${attempt} chances left`;
+        result.style.color = "#ffffff";
+        result.style.width = "50%";
+        result.style.borderRadius = "10px";
+        dropdown.disabled = true;
+    }
+}
 
 function check() {
     var input = parseInt(guess.value);
@@ -60,25 +61,22 @@ function check() {
         result.style.color = "#ffffff";
         adjustInstSize();
         return;
-    }
-    else if (attempt <= 0) {
+    } else if (attempt <= 0) {
         notifywin.textContent = "Oooopssss... You lost the game 😭";
-        result.textContent = "The Magic Number is: "+ magicNumber;
+        result.textContent = "The Magic Number is: " + magicNumber;
         notifywin.style.backgroundColor = "#ea431f";
         inst.style.backgroundColor = "#ea431f";
         inst.style.color = "#ffffff";
         result.style.color = "#ffffff";
         result.style.backgroundColor = "#ea431f";
-        jsConfetti.addConfetti({emojis: ['😭','😥','😥','😔','😔','😭']});
+        jsConfetti.addConfetti({ emojis: ['😭', '😥', '😥', '😔', '😔', '😭'] });
         result.style.paddingBottom = "0px";
         play.style.display = "block";
-        cmg.style.cursor = "not-allowed";
-        // cmg.style.display = "none";
-        adjustInstSize();
         disableButton("cmg");
+        cmg.style.cursor = "not-allowed";
+        adjustInstSize();
         return;
-    }
-    else if (input === magicNumber) {
+    } else if (input === magicNumber) {
         notifywin.textContent = " ";
         result.textContent = "Wowww! You won the game 🎁";
         result.style.padding = "7px";
@@ -92,12 +90,11 @@ function check() {
         disableButton("cmg");
         adjustInstSize();
         return;
-    }
-    else {
+    } else {
         attempt--;
         if (attempt <= 0) {
             notifywin.textContent = "Oooopssss... You lost the game 😭";
-            result.textContent = "The Magic Number is: "+ magicNumber;
+            result.textContent = "The Magic Number is: " + magicNumber;
             play.style.display = "block";
             notifywin.style.backgroundColor = "#ea431f";
             inst.style.backgroundColor = "#ea431f";
@@ -105,9 +102,8 @@ function check() {
             result.style.color = "#ffffff";
             result.style.backgroundColor = "#ea431f";
             cmg.style.cursor = "not-allowed";
-            jsConfetti.addConfetti({emojis: ['😭','😥','😥','😔','😔','😭']});
+            jsConfetti.addConfetti({ emojis: ['😭', '😥', '😥', '😔', '😔', '😭'] });
             result.style.paddingBottom = "0px";
-            // cmg.style.display = "none";
             adjustInstSize();
             disableButton("cmg");
             return;
@@ -124,9 +120,3 @@ function check() {
         }
     }
 }
-
-// function adjustInstSize() {
-//     inst.style.width = '400px';
-//     var width = inst.scrollWidth;
-//     inst.style.width = width + 'px';
-// }
