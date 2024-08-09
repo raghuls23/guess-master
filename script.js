@@ -11,7 +11,7 @@ const canvas = document.querySelector('#confetti');
 document.getElementById("dropdown").selectedIndex = 0;
 const jsConfetti = new JSConfetti();
 
-// play.style.display = "none";
+play.style.display = "none";
 
 function refresh(){
     if(ref){
