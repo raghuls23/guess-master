@@ -31,20 +31,20 @@ function setDifficulty() {
     if (selectedValue == "10") {
         attempt = 10;
         result.textContent = `You have ${attempt} chances left`;
-        dropdown.style.backgroundColor = 'green';
+        // dropdown.style.backgroundColor = 'rgb(86, 216, 86)';
     } else if (selectedValue == "5") {
         attempt = 5;
         result.textContent = `You have ${attempt} chances left`;
-        dropdown.style.backgroundColor = 'red';
+        // dropdown.style.backgroundColor = 'red';
     }
 
-    if (!dropdown.disabled) {
-        result.textContent = `You have ${attempt} chances left`;
-        result.style.color = "#ffffff";
-        result.style.width = "50%";
-        result.style.borderRadius = "10px";
-        dropdown.disabled = true;
-    }
+    // if (!dropdown.disabled) {
+    //     result.textContent = `You have ${attempt} chances left`;
+    //     result.style.color = "#ffffff";
+    //     result.style.width = "50%";
+    //     result.style.borderRadius = "10px";
+    //     dropdown.disabled = true;
+    // }
 }
 
 function check() {
@@ -59,6 +59,7 @@ function check() {
         result.style.padding = "5px";
         inst.style.color = "#ffffff";
         result.style.color = "#ffffff";
+        dropdown.disabled = true;
         adjustInstSize();
         return;
     } else if (attempt <= 0) {
@@ -74,6 +75,7 @@ function check() {
         play.style.display = "block";
         disableButton("cmg");
         cmg.style.cursor = "not-allowed";
+        dropdown.disabled = true;
         adjustInstSize();
         return;
     } else if (input === magicNumber) {
@@ -87,6 +89,7 @@ function check() {
         result.style.color = "#ffffff";
         jsConfetti.addConfetti();
         play.style.display = "block";
+        dropdown.disabled = true;
         disableButton("cmg");
         adjustInstSize();
         return;
@@ -104,6 +107,7 @@ function check() {
             cmg.style.cursor = "not-allowed";
             jsConfetti.addConfetti({ emojis: ['😭', '😥', '😥', '😔', '😔', '😭'] });
             result.style.paddingBottom = "0px";
+            dropdown.disabled = true;
             adjustInstSize();
             disableButton("cmg");
             return;
@@ -116,6 +120,7 @@ function check() {
             inst.style.backgroundColor = "#037E8C";
             result.style.backgroundColor = "#037E8C";
             inst.style.color = "#ffffff";
+            dropdown.disabled = true;
             adjustInstSize();
         }
     }

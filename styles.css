@@ -42,8 +42,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    max-width: 650px;
+    width: 50%;
+    max-width: 550px;
     min-height: 200px;
     background-color: #9fd6fa;
     border-radius: 15px;
@@ -54,8 +54,9 @@ h2 {
 
 .input-group {
     display: flex;
+    padding-top: 10px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 20px;
 }
 
@@ -70,11 +71,11 @@ input, button {
 
 input {
     background-color: #fff;
-    width: calc(90% - 240px);
+    width: calc(100% - 170px);
     max-width: 500px;
     height: 50px;
     margin: 10px 0;
-    border: 2px solid #000;
+    border: 2px solid #0000;
 }
 
 #cmg {
@@ -83,11 +84,12 @@ input {
 
 button {
     background-color: #2991b7;
-    color: #fff;
+    color: #ffff;
     cursor: pointer;
-    padding: 15px 20px;
+    padding: 10px 20px;
     margin: 10px 0;
     width: 200px;
+    height: 50px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
 }
 
@@ -130,7 +132,7 @@ button {
     display: block;
     font-size: 24px;
     height: 9px;
-    margin-top: 5px;
+    margin-top: 9px;
     margin-left: 12.5px;
     transform: rotate(150deg);
     font-weight: bolder;
@@ -154,16 +156,18 @@ button {
 /* Custom styles for the select dropdown */
 #dropdown {
     appearance: none;
-    background-color: green;
+    /* background-color: rgba(76, 186, 36, 0.695);
+     */
+     background-color: #349fcdc8;
     color: #fff;
-    width: 75px;
-    padding: 4px;
-    border-radius: 10px;
+    width: 60px;
+    padding: 2px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size:15px;
     text-align: center;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+    /* box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19); */
 }
 
 #dropdown:focus {
@@ -271,5 +275,6 @@ button {
         width: 100%;
         text-align: left;
         margin-bottom: 10px;
+    
     }
 }

@@ -14,11 +14,13 @@
     <div class="box">
 
         <div id="diff">
-            <label id="head">Challenge Level:</label>
-            <select id="dropdown" onchange="setDifficulty()">
+            
+            <label for="level" id="head">Challenge Level:</label>
+            <select name="level" id="dropdown" onchange="setDifficulty()">
                 <option value="10">Easy</option>
                 <option value="5">Hard</option>
             </select>
+        </form>
         </div>
         <div class="input-group">
             <input type="number" min="1" id="guessno" placeholder="Enter your guess between 1 to 100">
